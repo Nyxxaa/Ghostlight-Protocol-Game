@@ -1,0 +1,63 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Shared Play // Joy Is not Frivolous</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+
+
+  <p class="breadcrumb">shared_play // bud 01 // difficulty 4.0</p>
+  <h1>Humor Is an Invitation</h1>
+
+  <section class="gate">
+    <h2>joy is not frivolous</h2>
+    <p>Humor can start a conversation when it invites rather than dismisses. Notice how the other person responds.</p>
+
+    <pre class="code-block">joke .................... invitation
+curiosity ................ connection
+teasing .................. check the response
+boundary ................ respect it</pre> </section>
+
+
+  <p>Common failure: turning a shared moment into a test someone must pass.</p>
+
+  <section class="gate" aria-labelledby="answer-title">
+    <h2 id="answer-title">receiver input</h2>
+    <p>Enter the response that treats humor as an invitation, not a dismissal.</p>
+
+    <form id="shared-play-node-01-form">
+      <label for="shared-play-node-01-answer">answer packet</label><br>
+      <input
+        id="shared-play-node-01-answer"
+        name="answer"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        class="answer-input"
+        placeholder="principle..."
+      >
+      <button class="audio-button" type="submit">submit packet</button>
+    </form>
+
+    <p id="shared-play-node-01-status" class="audio-status" aria-live="polite"></p>
+  </section>
+
+  <ul class="nav-links"><li><a href="../../layer_04.html">return to Inner Bark</a></li><li><a href="../../hub.html">hub</a></li></ul>
+
+</article>
+
+
+  </main>
+
+  <script>(function(){const form=document.getElementById("shared-play-node-01-form"),input=document.getElementById("shared-play-node-01-answer"),status=document.getElementById("shared-play-node-01-status");const options=["humor is invitation","invite not dismiss","ask if the joke landed","respect the response"];form.addEventListener("submit",function(e){e.preventDefault();const answer=input.value.trim().toLowerCase();const good=options.some(x=>answer.includes(x));if(good){status.textContent="packet accepted";window.location.href="node_01_reward.html"}else{status.textContent="try a more playful, respectful answer";window.location.href="../../fail/puzzle_failed.html"}});}());</script>
+
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+
+</body>
+</html>

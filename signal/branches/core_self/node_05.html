@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Core Self // Compass under Load</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+      <p class="breadcrumb">core_self // bud 05 // difficulty 1.4</p>
+      <h1>Compass under Load</h1>
+      <section class="gate">
+        <h2>compass under load</h2>
+        <p>The final foundation lock does not open for admiration. It opens when the receiver can name what must stay joined when things get hard.</p>
+        <pre class="code-block">COMPASS TRACE
+
+Truth without care becomes a blade.
+Care without strength becomes collapse.
+Strength without truth becomes control.
+
+The receiver fails if they pick only the beautiful word.
+The receiver fails if they pick only the useful word.
+The receiver fails if they pick only the powerful word.
+
+The stable compass carries three points as one.</pre>
+      </section>
+      <section class="warning">
+        <p>Common failures: flattering the aesthetic, praising intensity, offering rescue, or treating values as poetry instead of behavior.</p>
+      </section>
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the three-point compass.</p>
+        <form id="core-node-05-form">
+          <label for="core-node-05-answer">answer packet</label><br>
+          <input id="core-node-05-answer" name="answer" type="text" autocomplete="off" spellcheck="false" class="answer-input" placeholder="three-point compass">
+          <button class="audio-button" type="submit">submit packet</button>
+        </form>
+        <p id="core-node-05-status" class="audio-status" aria-live="polite"></p>
+      </section>
+      <ul class="nav-links"><li><a href="../../layer_01.html">return to Lateral Root</a></li><li><a href="../../hub.html">hub</a></li></ul>
+    </article>
+  </main>
+  <script>
+    (function () {
+      const form = document.getElementById("core-node-05-form");
+      const input = document.getElementById("core-node-05-answer");
+      const status = document.getElementById("core-node-05-status");
+
+      function normalize(value) {
+        return value.trim().toLowerCase();
+      }
+
+      function compact(value) {
+        return normalize(value).replace(/[^a-z0-9]/g, "");
+      }
+
+      function hasAny(value, terms) {
+        return terms.some(function (term) {
+          return value.indexOf(term) !== -1;
+        });
+      }
+
+      function accepts(value) {
+        const key = compact(value);
+
+        const blocked = new Set([
+          "truth",
+          "care",
+          "power",
+          "strength",
+          "beauty",
+          "intensity",
+          "love",
+          "everything",
+          "allofit",
+          "benice",
+          "bestrong"
+        ]);
+
+        if (blocked.has(key)) return false;
+
+        const exact = new Set([
+          "truthcompassionpower",
+          "truthcompassionandpower",
+          "truthcompassionpowertogether",
+          "truthcarepower",
+          "truthcompassionstrength",
+          "truthcarestrength",
+          "allthingsmustbetrue",
+          "allthreemustbetrue",
+          "allthreestayjoined",
+          "allthreeheldtogether",
+          "holdallthree",
+          "keepallthreetogether",
+          "theymuststayjoined",
+          "thecompasscarriesthreepoints",
+          "threepointsasone",
+          "truthcareandstrengthtogether",
+          "truthcompassionandpowermuststaytogether"
+        ]);
+
+        if (exact.has(key)) return true;
+
+        const joining = hasAny(key, ["together", "joined", "held", "hold", "balance", "balanced", "one", "aligned", "integrated"]);
+        if (key.indexOf("allthingsmustbetrue") !== -1) return true;
+        if (key.indexOf("allthree") !== -1 && joining) return true;
+
+        const concepts = [
+          key.indexOf("truth") !== -1,
+          key.indexOf("compassion") !== -1 || key.indexOf("care") !== -1,
+          key.indexOf("power") !== -1 || key.indexOf("strength") !== -1
+        ].filter(Boolean).length;
+
+        return concepts >= 2 && joining;
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const value = input.value;
+        if (!value) { status.textContent = "empty compass"; return; }
+        if (accepts(value)) { status.textContent = "compass aligned"; window.location.href = "node_05_reward.html"; }
+        else { status.textContent = "compass unstable"; window.location.href = "../../fail/care_gate_failed.html"; }
+      });
+    }());
+  </script>
+  <script src="../../../script.js?v=branch-inputs-2"></script>
+</body>
+</html>

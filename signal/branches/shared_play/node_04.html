@@ -1,0 +1,63 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Shared Play // Medicine Against Despair</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+
+
+  <p class="breadcrumb">shared_play // bud 04 // difficulty 4.3</p>
+  <h1>Choose Something Together</h1>
+
+  <section class="gate">
+    <h2>medicine against despair</h2>
+    <p>Choose an activity together, check that both people are interested, and allow either person to change their mind.</p>
+
+    <pre class="code-block">two interests .......... considered
+clear invitation ........ offered
+choice .................. mutual
+change of mind .......... respected</pre> </section>
+
+
+  <p>Common failure: turning a shared moment into a test someone must pass.</p>
+
+  <section class="gate" aria-labelledby="answer-title">
+    <h2 id="answer-title">receiver input</h2>
+    <p>Enter the principle that makes play mutually enjoyable.</p>
+
+    <form id="shared-play-node-04-form">
+      <label for="shared-play-node-04-answer">answer packet</label><br>
+      <input
+        id="shared-play-node-04-answer"
+        name="answer"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        class="answer-input"
+        placeholder="synthesis..."
+      >
+      <button class="audio-button" type="submit">submit packet</button>
+    </form>
+
+    <p id="shared-play-node-04-status" class="audio-status" aria-live="polite"></p>
+  </section>
+
+  <ul class="nav-links"><li><a href="../../layer_04.html">return to Inner Bark</a></li><li><a href="../../hub.html">hub</a></li></ul>
+
+</article>
+
+
+  </main>
+
+  <script>(function(){const form=document.getElementById("shared-play-node-04-form"),input=document.getElementById("shared-play-node-04-answer"),status=document.getElementById("shared-play-node-04-status");const options=["both people choose","mutual enjoyment","change their minds","consent remains clear"];form.addEventListener("submit",function(e){e.preventDefault();const answer=input.value.trim().toLowerCase();const good=options.some(x=>answer.includes(x));if(good){status.textContent="packet accepted";window.location.href="node_04_reward.html"}else{status.textContent="try a more playful, respectful answer";window.location.href="../../fail/puzzle_failed.html"}});}());</script>
+
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+
+</body>
+</html>

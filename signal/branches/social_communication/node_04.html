@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Social Communication // Public Self Is not Full Access</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+      <p class="breadcrumb">social_communication // bud 04 // difficulty 3.3</p>
+      <h1>Public Self Is not Full Access</h1>
+
+      <section class="gate">
+        <h2>public self is not full access</h2>
+        <p>The receiver sees a public signal and wants to treat it as the whole private map. The safe read keeps dignity: public framing is real, but it is not an invitation to force hidden layers.</p>
+        <pre class="code-block">BOUNDARY TRACE
+
+public signal ......... real but scoped
+private layer ......... not owed
+curiosity ............. ask with consent
+dignity ............... protect the frame</pre>
+      </section>
+
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the boundary that keeps public signal from becoming entitlement.</p>
+        <form id="social-node-04-form">
+          <label for="social-node-04-answer">response</label><br>
+          <input id="social-node-04-answer" name="answer" type="text" autocomplete="off" spellcheck="false" class="answer-input" placeholder="principle">
+          <button class="audio-button" type="submit">submit</button>
+        </form>
+        <p id="social-node-04-status" class="audio-status" aria-live="polite"></p>
+      </section>
+
+      <ul class="nav-links"><li><a href="../../layer_03.html">return to Outer Bark</a></li><li><a href="../../hub.html">hub</a></li></ul>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.getElementById("social-node-04-form");
+      const input = document.getElementById("social-node-04-answer");
+      const status = document.getElementById("social-node-04-status");
+      function normalize(value) { return value.trim().toLowerCase(); }
+      function compact(value) { return normalize(value).replace(/[^a-z0-9]/g, ""); }
+      function includesAny(value, terms) { return terms.some(function (term) { return value.indexOf(term) !== -1; }); }
+      function accepts(value) {
+        const key = compact(value);
+        const rejected = new Set(["public", "private", "access", "entitlement", "curiosity", "everything", "fullaccess", "forceit", "pry"]);
+        const exact = new Set(["publicselfisnotfullaccess", "publicisnotprivate", "publicsignalisscoped", "respecttheprivateboundary", "dignityinpublicframing", "publicdoesnotmeanaccess", "visibilityisnotpermission", "askwithconsent", "privateisnotowed"]);
+        if (!key || rejected.has(key)) return false;
+        if (exact.has(key)) return true;
+        if (includesAny(key, ["public", "visible", "visibility", "signal"]) && includesAny(key, ["scope", "scoped", "boundary", "notaccess", "notpermission", "notprivate", "dignity"])) return true;
+        return includesAny(key, ["consent", "permission", "privacy", "private"]) && includesAny(key, ["respect", "ask", "boundary", "notowed"]);
+      }
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!compact(input.value)) { status.textContent = "empty boundary"; return; }
+        if (accepts(input.value)) { status.textContent = "scope respected"; window.location.href = "node_04_reward.html"; }
+        else { status.textContent = "boundary forced"; window.location.href = "../../fail/care_gate_failed.html"; }
+      });
+    }());
+  </script>
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+</body>
+</html>

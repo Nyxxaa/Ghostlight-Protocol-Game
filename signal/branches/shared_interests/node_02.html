@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Shared Interests // Flavor Carries Function</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+      <p class="breadcrumb">shared_interests // bud 02 // difficulty 2.1</p>
+      <h1>A Playlist Is a Conversation</h1>
+
+      <section class="gate">
+        <h2>flavor carries function</h2>
+        <p>Shared interests can create connection, but similarity is not required. Ask, listen, and share something of your own.</p>
+        <pre class="code-block">rhythm ................. creates a pattern
+surprise ............... adds contrast
+shared reference ....... sparks a story
+different taste ....... keeps discovery open</pre>
+      </section>
+
+      <section class="warning">
+        <p>Common failure: judging a preference before asking what it means.</p>
+      </section>
+
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter what turns a shared interest into a conversation.</p>
+        <form id="food-node-02-form">
+          <label for="food-node-02-answer">response</label><br>
+          <input id="food-node-02-answer" name="answer" type="text" autocomplete="off" spellcheck="false" class="answer-input" placeholder="principle">
+          <button class="audio-button" type="submit">submit</button>
+        </form>
+        <p id="food-node-02-status" class="audio-status" aria-live="polite"></p>
+      </section>
+
+      <ul class="nav-links"><li><a href="../../layer_02.html">return to Taproot</a></li><li><a href="../../hub.html">hub</a></li></ul>
+    </article>
+  </main>
+
+  <script>(function(){const form=document.getElementById("food-node-02-form"),input=document.getElementById("food-node-02-answer"),status=document.getElementById("food-node-02-status");const options=["ask what they enjoy","share an interest","conversation","similarity is not required"];form.addEventListener("submit",function(e){e.preventDefault();const answer=input.value.trim().toLowerCase();const good=options.some(x=>answer.includes(x));if(good){status.textContent="packet accepted";window.location.href="node_02_reward.html"}else{status.textContent="try a more curious answer";window.location.href="../../fail/puzzle_failed.html"}});}());</script>
+
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+</body>
+</html>

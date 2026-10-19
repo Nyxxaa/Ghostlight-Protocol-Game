@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Shared Interests // Joy Is Care</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+      <p class="breadcrumb">shared_interests // bud 03 // difficulty 2.2</p>
+      <h1>Play Needs No Proof</h1>
+
+      <section class="gate">
+        <h2>joy is care</h2>
+        <p>A good date leaves room for joy, humor, and shared play. Enjoyment does not have to be earned.</p>
+        <pre class="code-block">play ................... makes room for joy
+laughter ............... can be shared
+choice .................. remains clear
+fun .................... needs no proof</pre>
+      </section>
+
+      <section class="warning">
+        <p>Common failure: judging a preference before asking what it means.</p>
+      </section>
+
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the principle that lets a date include playful fun.</p>
+        <form id="food-node-03-form">
+          <label for="food-node-03-answer">response</label><br>
+          <input id="food-node-03-answer" name="answer" type="text" autocomplete="off" spellcheck="false" class="answer-input" placeholder="care rule">
+          <button class="audio-button" type="submit">submit</button>
+        </form>
+        <p id="food-node-03-status" class="audio-status" aria-live="polite"></p>
+      </section>
+
+      <ul class="nav-links"><li><a href="../../layer_02.html">return to Taproot</a></li><li><a href="../../hub.html">hub</a></li></ul>
+    </article>
+  </main>
+
+  <script>(function(){const form=document.getElementById("food-node-03-form"),input=document.getElementById("food-node-03-answer"),status=document.getElementById("food-node-03-status");const options=["shared play","enjoyment belongs","choose fun together","consent clear","fun needs no proof"];form.addEventListener("submit",function(e){e.preventDefault();const answer=input.value.trim().toLowerCase();const good=options.some(x=>answer.includes(x));if(good){status.textContent="packet accepted";window.location.href="node_03_reward.html"}else{status.textContent="try a more curious answer";window.location.href="../../fail/puzzle_failed.html"}});}());</script>
+
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+</body>
+</html>

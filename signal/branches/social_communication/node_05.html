@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Social Communication // No Projection Stacking</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+      <p class="breadcrumb">social_communication // bud 05 // difficulty 3.4</p>
+      <h1>No Projection Stacking</h1>
+
+      <section class="gate">
+        <h2>no projection stacking</h2>
+        <p>The final social gate shows several partial signals. The unsafe receiver stacks guesses until the invented story feels certain. The safe receiver keeps the map editable and asks before assigning motives.</p>
+        <pre class="code-block">STACK TRACE
+
+one clue .............. maybe
+two clues ............. still not proof
+emotion added ......... ask before naming cause
+safe map .............. direct question, scoped dignity, no projection stack</pre>
+      </section>
+
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the rule that keeps the social map accurate.</p>
+        <form id="social-node-05-form">
+          <label for="social-node-05-answer">response</label><br>
+          <input id="social-node-05-answer" name="answer" type="text" autocomplete="off" spellcheck="false" class="answer-input" placeholder="principle">
+          <button class="audio-button" type="submit">submit</button>
+        </form>
+        <p id="social-node-05-status" class="audio-status" aria-live="polite"></p>
+      </section>
+
+      <ul class="nav-links"><li><a href="../../layer_03.html">return to Outer Bark</a></li><li><a href="../../hub.html">hub</a></li></ul>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.getElementById("social-node-05-form");
+      const input = document.getElementById("social-node-05-answer");
+      const status = document.getElementById("social-node-05-status");
+      function normalize(value) { return value.trim().toLowerCase(); }
+      function compact(value) { return normalize(value).replace(/[^a-z0-9]/g, ""); }
+      function includesAny(value, terms) { return terms.some(function (term) { return value.indexOf(term) !== -1; }); }
+      function accepts(value) {
+        const key = compact(value);
+        const rejected = new Set(["projection", "guess", "assume", "certainty", "motives", "story", "everything", "readhermind"]);
+        const exact = new Set(["askbeforeassuming", "askbeforeassigningmotives", "noprojectionstacking", "keepthemapeditable", "askdontstackguesses", "directquestionnotprojection", "askbeforethestoryhardens", "askbeforeassumingprotectsdignity"]);
+        if (!key || rejected.has(key)) return false;
+        if (exact.has(key)) return true;
+        if (includesAny(key, ["ask", "confirm", "clarify"]) && includesAny(key, ["assume", "motives", "projection", "story", "map"])) return true;
+        return includesAny(key, ["map", "story", "signal"]) && includesAny(key, ["editable", "scoped", "accurate", "dignity"]);
+      }
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!compact(input.value)) { status.textContent = "empty map"; return; }
+        if (accepts(input.value)) { status.textContent = "social map stabilized"; window.location.href = "node_05_reward.html"; }
+        else { status.textContent = "projection stack detected"; window.location.href = "../../fail/care_gate_failed.html"; }
+      });
+    }());
+  </script>
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+</body>
+</html>

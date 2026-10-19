@@ -1,0 +1,134 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // INNER BARK</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+
+  <p class="breadcrumb">trunk // inner bark</p>
+  <h1>GHOSTLIGHT PROTOCOL // INNER BARK</h1>
+
+  <section class="gate">
+    <h2>spectrogram audio</h2>
+    <p>Inspect the waveform visually. The sound layer carries a visible phrase.</p>
+    <pre class="code-block">signal/layer_04.wav</pre>
+  </section>
+
+  <section class="audio-panel">
+    <audio controls preload="none" src="layer_04.wav"></audio>
+  </section>
+
+  <section class="gate" aria-labelledby="answer-title">
+    <h2 id="answer-title">receiver input</h2>
+    <p>Enter the visible phrase or the next artifact path.</p>
+
+    <form id="layer-04-answer-form">
+      <label for="layer-04-answer">answer packet</label><br>
+      <input
+        id="layer-04-answer"
+        name="answer"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        class="answer-input"
+        placeholder="visible phrase..."
+      >
+      <button class="audio-button" type="submit">submit packet</button>
+    </form>
+
+    <p id="layer-04-answer-status" class="audio-status" aria-live="polite"></p>
+  </section>
+
+  <section class="gate">
+    <h2>Inner Bark branches</h2>
+    <ul class="path-list">
+      <li><a href="branches/creative_technical/start.html">creative_technical branch</a></li>
+      <li><a href="branches/shared_play/start.html">shared_play branch</a></li>
+    </ul>
+  </section>
+
+  <ul class="path-list">
+    <li><a href="layer_03.html">previous layer</a></li>
+    <li><a href="hub.html">hub</a></li>
+  </ul>
+
+</article>
+
+  </main>
+
+  <script>
+    if (sessionStorage.getItem("ghostlightTrunkLayer03Accepted") !== "true") {
+      window.location.href = "layer_03.html";
+    }
+
+    const form = document.getElementById("layer-04-answer-form");
+    const input = document.getElementById("layer-04-answer");
+    const status = document.getElementById("layer-04-answer-status");
+
+    function normalizeAnswer(value) {
+      return value
+        .trim()
+        .toLowerCase()
+        .replace(/[_-]+/g, " ")
+        .replace(/\s+/g, " ");
+    }
+
+    function compact(value) {
+      return normalizeAnswer(value).replace(/[^a-z0-9]/g, "");
+    }
+
+    function includesAny(value, terms) {
+      return terms.some((term) => value.includes(term));
+    }
+
+    function isValidAnswer(value) {
+      const text = normalizeAnswer(value);
+      const key = compact(value);
+      const rejected = new Set(["voice", "signal", "sound", "audio", "music", "resonance", "listen", "heard"]);
+      const accepted = new Set([
+        "voiceissignal",
+        "voiceisasignal",
+        "voicecarriessignal",
+        "voicecarriesasignal",
+        "soundissignal",
+        "soundisasignal",
+        "soundcarriessignal",
+        "resonanceissignal",
+        "signalvoice",
+        "signallayer05capacitygatetxt",
+        "layer05capacitygate",
+        "layer05capacitygatetxt"
+      ]);
+
+      if (!key) return false;
+      if (rejected.has(key)) return false;
+      if (accepted.has(key)) return true;
+      if (text.includes("capacity gate")) return true;
+
+      return includesAny(text, ["voice", "sound", "audio", "resonance"]) && includesAny(text, ["signal", "carries", "visible", "phrase"]);
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (isValidAnswer(input.value)) {
+        sessionStorage.setItem("ghostlightTrunkLayer04Accepted", "true");
+        status.textContent = "packet accepted";
+        window.location.href = "layer_04_reward.html";
+      } else {
+        status.textContent = "packet rejected";
+        window.location.href = "fail/puzzle_failed.html";
+      }
+    });
+  </script>
+
+  <script src="../script.js?v=branch-inputs-2"></script>
+
+</body>
+</html>

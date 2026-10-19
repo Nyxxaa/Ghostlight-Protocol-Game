@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Core Self // Nameplate Drift</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+
+      <p class="breadcrumb">core_self // bud 02 // difficulty 1.1</p>
+      <h1>Nameplate Drift</h1>
+
+      <section class="gate">
+        <h2>nameplate drift</h2>
+        <p>The registry contains many labels. Some are archive residue. Some are masks. Some are handles. One is the current signal.</p>
+        <pre class="code-block">NAMEPLATE TRACE
+
+record name ......... belongs to paperwork, not the door
+old handle .......... useful only as history
+role label .......... describes function, not self
+mask name ........... may carry style, not consent
+chosen signal ....... the receiver uses this one when speaking to them
+
+The signal is not the record name. Follow the chosen name.</pre>
+      </section>
+
+      <section class="warning">
+        <p>Common failures: treating paperwork as closeness, using an old handle because it feels interesting, or choosing a label that makes the receiver feel clever instead of choosing the signal they actually use.</p>
+      </section>
+
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the current signal name.</p>
+
+        <form id="core-node-02-form">
+          <label for="core-node-02-answer">answer packet</label><br>
+          <input
+            id="core-node-02-answer"
+            name="answer"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            class="answer-input"
+            placeholder="signal name"
+          >
+          <button class="audio-button" type="submit">submit packet</button>
+        </form>
+
+        <p id="core-node-02-status" class="audio-status" aria-live="polite"></p>
+      </section>
+
+      <ul class="nav-links"><li><a href="../../layer_01.html">return to Lateral Root</a></li><li><a href="../../hub.html">hub</a></li></ul>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.getElementById("core-node-02-form");
+      const input = document.getElementById("core-node-02-answer");
+      const status = document.getElementById("core-node-02-status");
+
+      function normalize(value) {
+        return value.trim().toLowerCase();
+      }
+
+      function compact(value) {
+        return normalize(value).replace(/[^a-z0-9]/g, "");
+      }
+
+      function includesAny(value, terms) {
+        return terms.some(function (term) {
+          return value.indexOf(term) !== -1;
+        });
+      }
+
+      function accepts(value) {
+        const key = compact(value);
+        const rejected = new Set([
+          "legalname",
+          "oldname",
+          "archivename",
+          "realname",
+          "allnames"
+        ]);
+
+        if (rejected.has(key)) return false;
+
+        const exact = new Set([
+          "usethechosenname",
+          "chosenname",
+          "currentsignal",
+          "currentname",
+          "followthecurrentsignal",
+          "thechosensignalleads",
+          "notthelegalname",
+          "nottheoldname",
+          "currentoverarchive"
+        ]);
+
+        if (exact.has(key)) return true;
+
+        if (key.indexOf("chosen") !== -1 && includesAny(key, ["name", "signal", "lead", "leads", "use"])) return true;
+        if (key.indexOf("current") !== -1 && includesAny(key, ["name", "signal", "lead", "leads", "use", "archive"])) return true;
+
+        return key.indexOf("not") !== -1 && includesAny(key, ["legalname", "oldname", "archivename"]);
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const value = input.value;
+
+        if (!compact(value)) {
+          status.textContent = "empty nameplate";
+          return;
+        }
+
+        if (accepts(value)) {
+          status.textContent = "signal recognized";
+          window.location.href = "node_02_reward.html";
+        } else {
+          status.textContent = "nameplate rejected";
+          window.location.href = "../../fail/care_gate_failed.html";
+        }
+      });
+    }());
+  </script>
+
+  <script src="../../../script.js?v=branch-inputs-2"></script>
+</body>
+</html>

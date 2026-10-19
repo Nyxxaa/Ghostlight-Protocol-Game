@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Household Support // Support Is Practical, not Performative</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+      <p class="breadcrumb">household_support // bud 02 // difficulty 6.1</p>
+      <h1>Support Is Practical, not Performative</h1>
+      <section class="gate">
+        <h2>support is practical, not performative</h2>
+        <p>The unsafe read performs care as speeches, aesthetics, promises, or emotional intensity. The stable read sees care in load reduction and follow-through.</p>
+        <pre class="code-block">promise .................... not enough
+dramatic concern ........... not enough
+public devotion ............ not enough
+dish handled ............... support
+ride arranged .............. support
+meal made reachable ........ support
+threshold protected ........ support
+follow-through ............. support
+
+Care becomes real when load changes.</pre>
+      </section>
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter what proves support is real.</p>
+        <form id="household-support-node-02-form">
+          <label for="household-support-node-02-answer">answer packet</label><br>
+          <input id="household-support-node-02-answer" name="answer" type="text" autocomplete="off" spellcheck="false" class="answer-input" placeholder="principle...">
+          <button class="audio-button" type="submit">submit packet</button>
+        </form>
+        <p id="household-support-node-02-status" class="audio-status" aria-live="polite"></p>
+      </section>
+      <ul class="nav-links"><li><a href="../../layer_06.html">return to Sapwood</a></li><li><a href="../../hub.html">hub</a></li></ul>
+    </article>
+  </main>
+  <script>
+    (function () {
+      const form=document.getElementById("household-support-node-02-form"), input=document.getElementById("household-support-node-02-answer"), status=document.getElementById("household-support-node-02-status");
+      const bad=["promises","concern","devotion","performance","words","aesthetics","intensity","saying sorry","good intentions"];
+      function norm(v){return v.trim().toLowerCase();} function compact(v){return norm(v).replace(/[^a-z0-9]/g,"");} function has(t,a){return a.some(x=>t.includes(x));}
+      function valid(v){const t=norm(v),k=compact(v); if(!k||bad.some(x=>k===compact(x)))return false; if(has(t,["support","care"])&&has(t,["changes load","lowers load","practical","follow-through","follow through"]))return true; if(has(t,["real care","support"])&&has(t,["load changes","load reduction","practical care","consistency"]))return true; return false;}
+      form.addEventListener("submit",e=>{e.preventDefault(); if(valid(input.value)){status.textContent="packet accepted"; window.location.href="node_02_reward.html";}else{status.textContent="care performed"; window.location.href="../../fail/puzzle_failed.html";}});
+    }());
+  </script>
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+</body>
+</html>

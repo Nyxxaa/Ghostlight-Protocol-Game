@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Aesthetic // Dark Is not Disorder</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+      <p class="breadcrumb">aesthetic // bud 01 // difficulty 2.0</p>
+      <h1>Dark Is not Disorder</h1>
+
+      <section class="gate">
+        <h2>dark is not disorder</h2>
+        <p>The first artifact looks dark before it looks legible. The receiver has to notice the difference between noise and deliberate signal.</p>
+        <pre class="code-block">ARTIFACT TRACE
+
+black field / midnight edge / crimson pulse / silver glint
+matte hush / satin drag / velvet shadow / metal answer
+chains low in the frame / roses cut by stormlight / scales repeating
+vertical line held in low light
+one motif returns until the room starts speaking
+
+The false read says: random darkness.
+The stable read names the discipline shaping it.</pre>
+      </section>
+
+      <section class="warning">
+        <p>Common failures: naming only darkness, naming only goth, praising prettiness, or mistaking curated intensity for mess.</p>
+      </section>
+
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the principle that keeps darkness from becoming noise.</p>
+        <form id="aesthetic-node-01-form">
+          <label for="aesthetic-node-01-answer">response</label><br>
+          <input id="aesthetic-node-01-answer" name="answer" type="text" autocomplete="off" spellcheck="false" class="answer-input" placeholder="principle">
+          <button class="audio-button" type="submit">submit</button>
+        </form>
+        <p id="aesthetic-node-01-status" class="audio-status" aria-live="polite"></p>
+      </section>
+
+      <ul class="nav-links"><li><a href="../../layer_02.html">return to Taproot</a></li><li><a href="../../hub.html">hub</a></li></ul>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.getElementById("aesthetic-node-01-form");
+      const input = document.getElementById("aesthetic-node-01-answer");
+      const status = document.getElementById("aesthetic-node-01-status");
+
+      function compact(value) {
+        return value.trim().toLowerCase().replace(/[^a-z0-9]/g, "");
+      }
+
+      function hasAny(value, terms) {
+        return terms.some(function (term) {
+          return value.indexOf(term) !== -1;
+        });
+      }
+
+      function accepts(value) {
+        const key = compact(value);
+        const rejected = ["dark", "goth", "pretty", "chaos", "black", "aesthetic", "vibe", "style", "color"];
+        if (rejected.indexOf(key) !== -1) return false;
+
+        const accepted = [
+          "order",
+          "structure",
+          "intention",
+          "intent",
+          "deliberateorder",
+          "deliberatestructure",
+          "deliberatearrangement",
+          "intentionalarrangement",
+          "curatedorder",
+          "curatedstructure",
+          "pattern",
+          "controlledpattern",
+          "controlledchaos",
+          "shapeddarkness",
+          "structureddarkness",
+          "deliberatedarkness",
+          "curateddarkness",
+          "darknessneedsstructure",
+          "darkisnotdisorder",
+          "aestheticissignal",
+          "curatedsignal",
+          "intentionalsignal",
+          "deliberatesignal"
+        ];
+        if (accepted.indexOf(key) !== -1) return true;
+
+        return hasAny(key, ["order", "structure", "intent", "intention", "deliberate", "curated", "pattern", "shaped"]);
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const value = input.value;
+        if (!compact(value)) { status.textContent = "empty signal"; return; }
+        if (accepts(value)) { status.textContent = "signal shaped"; window.location.href = "node_01_reward.html"; }
+        else { status.textContent = "noise unresolved"; window.location.href = "../../fail/puzzle_failed.html"; }
+      });
+    }());
+  </script>
+
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+</body>
+</html>

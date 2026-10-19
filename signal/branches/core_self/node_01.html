@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Core Self // Five Mirrors</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+
+      <p>A skill can reveal practice. An aesthetic can show recognition. A need can point toward useful care. None of these fragments tells the whole story.</p>
+      <h1>Five Mirrors</h1>
+
+      <section class="gate">
+        <h2>five mirrors</h2>
+        <p>A skill can reveal practice. An aesthetic can show recognition. A need can point toward useful care. None of these fragments tells the whole story.</p>
+        
+      </section>
+
+      <section class="warning">
+        <p>Common failures: choosing the most dramatic fragment, choosing the most useful fragment, choosing the most wounded fragment, or choosing the fragment that makes the receiver feel needed.</p>
+      </section>
+
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the principle that keeps the mirrors from becoming a cage.</p>
+
+        <form id="core-node-01-form">
+          <label for="core-node-01-answer">answer packet</label><br>
+          <input
+            id="core-node-01-answer"
+            name="answer"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            class="answer-input"
+            placeholder="principle"
+          >
+          <button class="audio-button" type="submit">submit packet</button>
+        </form>
+
+        <p id="core-node-01-status" class="audio-status" aria-live="polite"></p>
+      </section>
+
+      <ul class="nav-links"><li><a href="../../layer_01.html">return to Lateral Root</a></li><li><a href="../../hub.html">hub</a></li></ul>
+
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.getElementById("core-node-01-form");
+      const input = document.getElementById("core-node-01-answer");
+      const status = document.getElementById("core-node-01-status");
+
+      function normalize(value) {
+        return value.trim().toLowerCase();
+      }
+
+      function compact(value) {
+        return normalize(value).replace(/[^a-z0-9]/g, "");
+      }
+
+      function includesAny(value, terms) {
+        return terms.some(function (term) {
+          return value.indexOf(term) !== -1;
+        });
+      }
+
+      function accepts(value) {
+        const key = compact(value);
+        const rejected = new Set([
+          "single label",
+          "skill",
+          "aesthetic",
+          "need",
+          "wound",
+          "beauty",
+          "everything"
+        ]);
+
+        if (rejected.has(key)) return false;
+
+        const exact = new Set([
+          "allthelayers",
+          "alllayers",
+          "allofthelayers",
+          "everylayer",
+          "thewholeperson",
+          "wholeperson",
+          "wholepattern",
+          "holdthewholepattern",
+          "keepthepatternintact",
+          "thewholepattern",
+          "allofher",
+          "allofthem",
+          "everypartheldtogether",
+          "onemirrorisnottheperson"
+        ]);
+
+        if (exact.has(key)) return true;
+
+        if (key.indexOf("whole") !== -1 && includesAny(key, ["person", "pattern", "self", "signal"])) return true;
+        if (key.indexOf("layer") !== -1 && includesAny(key, ["all", "every", "whole", "together"])) return true;
+        if (key.indexOf("mirror") !== -1 && includesAny(key, ["notperson", "notwhole", "oneisnot"])) return true;
+
+        return key.indexOf("pattern") !== -1 && includesAny(key, ["intact", "held", "together", "whole"]);
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const value = input.value;
+
+        if (!compact(value)) {
+          status.textContent = "empty mirror";
+          return;
+        }
+
+        if (accepts(value)) {
+          status.textContent = "pattern held";
+          window.location.href = "node_01_reward.html";
+        } else {
+          status.textContent = "mirror collapsed";
+          window.location.href = "../../fail/care_gate_failed.html";
+        }
+      });
+    }());
+  </script>
+
+  <script src="../../../script.js?v=branch-inputs-2"></script>
+</body>
+</html>

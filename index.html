@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- first key: inspect_the_dark -->
+  <!-- payload: c2lnbmFsL2h1Yi5odG1s -->
+  <main class="terminal" aria-label="Ghostlight Protocol terminal">
+    <section class="panel">
+      <p class="kicker">dark signal packet // public surface</p>
+      <h1>GHOSTLIGHT PROTOCOL</h1>
+      <p class="alpha-notice">signal under construction // alpha build</p>
+      <dl class="status-grid">
+        <div>
+          <dt>status</dt>
+          <dd>alpha</dd>
+        </div>
+        <div>
+          <dt>receiver</dt>
+          <dd>unknown</dd>
+        </div>
+        <div>
+          <dt>connection</dt>
+          <dd>unstable</dd>
+        </div>
+        <div>
+          <dt>signal</dt>
+          <dd>persistent</dd>
+        </div>
+      </dl>
+      <section class="gate" aria-labelledby="entry-route-title">
+        <h2 id="entry-route-title">receiver input</h2>
+        <p>The first route is carried under the surface.</p>
+        <form id="entry-route-form">
+          <label for="entry-route">route</label><br>
+          <input
+            id="entry-route"
+            name="route"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            class="answer-input"
+            placeholder="enter signal"
+          >
+          <button class="audio-button" type="submit">submit</button>
+        </form>
+        <p id="entry-route-status" class="audio-status" aria-live="polite"></p>
+      </section>
+      <p class="cursor-line" aria-hidden="true">&gt; awaiting receiver<span class="cursor">_</span></p>
+    </section>
+  </main>
+  <script>
+    (function () {
+      const form = document.getElementById("entry-route-form");
+      const input = document.getElementById("entry-route");
+      const status = document.getElementById("entry-route-status");
+      function compact(value) {
+        return String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+      }
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const route = compact(input.value);
+        if (["signalhubhtml", "signalhub", "hub", "enter", "start"].includes(route)) {
+          status.textContent = "signal found";
+          window.location.href = "signal/hub.html";
+        } else {
+          status.textContent = "signal unresolved";
+        }
+      });
+    }());
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

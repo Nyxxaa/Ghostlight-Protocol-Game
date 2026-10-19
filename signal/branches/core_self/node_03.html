@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Core Self // Presence Trace</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+      <p class="breadcrumb">core_self // bud 03 // difficulty 1.2</p>
+      <h1>Presence Trace</h1>
+      <section class="gate">
+        <h2>presence trace</h2>
+        <p>The signal is steady, reserved, observant, and precise.</p>
+        <pre class="code-block">PRESENCE TRACE
+
+calm ................. steady
+reserved ............. held
+observant ............ watching the pattern
+precise .............. careful signal
+low voice ............ measured signal
+
+The stable read recognizes measured presence.</pre>
+      </section>
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the phrase that names the stable read.</p>
+        <form id="core-node-03-form">
+          <label for="core-node-03-answer">answer packet</label><br>
+          <input id="core-node-03-answer" name="answer" type="text" autocomplete="off" spellcheck="false" class="answer-input" placeholder="stable read">
+          <button class="audio-button" type="submit">submit packet</button>
+        </form>
+        <p id="core-node-03-status" class="audio-status" aria-live="polite"></p>
+      </section>
+      <ul class="nav-links"><li><a href="../../layer_01.html">return to Lateral Root</a></li><li><a href="../../hub.html">hub</a></li></ul>
+    </article>
+  </main>
+  <script>
+    (function () {
+      const form = document.getElementById("core-node-03-form");
+      const input = document.getElementById("core-node-03-answer");
+      const status = document.getElementById("core-node-03-status");
+      function normalize(value) { return value.trim().toLowerCase(); }
+      function compact(value) { return normalize(value).replace(/[^a-z0-9]/g, ""); }
+      function includesAny(value, terms) { return terms.some(function (term) { return value.indexOf(term) !== -1; }); }
+      function accepts(value) {
+        const key = compact(value);
+        const rejected = new Set(["cold", "empty", "absent", "aloof", "mysterious", "silent"]);
+        if (rejected.has(key)) return false;
+
+        const exact = new Set([
+          "measuredpresence",
+          "calmpresence",
+          "guardedpresence",
+          "quietisnotabsence",
+          "reservedisnotempty",
+          "observantpresence",
+          "stillnessissignal",
+          "presencenotperformance"
+        ]);
+
+        if (exact.has(key)) return true;
+        if (key.indexOf("presence") !== -1 && includesAny(key, ["measured", "calm", "guarded", "reserved", "observant", "steady"])) return true;
+        if (key.indexOf("quiet") !== -1 && includesAny(key, ["notabsence", "presence", "signal"])) return true;
+        if (key.indexOf("stillness") !== -1 && includesAny(key, ["signal", "presence"])) return true;
+
+        return key.indexOf("reserved") !== -1 && includesAny(key, ["notempty", "presence", "signal"]);
+      }
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const value = input.value;
+        if (!compact(value)) { status.textContent = "empty trace"; return; }
+        if (accepts(value)) { status.textContent = "presence recognized"; window.location.href = "node_03_reward.html"; }
+        else { status.textContent = "presence unresolved"; window.location.href = "../../fail/care_gate_failed.html"; }
+      });
+    }());
+  </script>
+  <script src="../../../script.js?v=branch-inputs-2"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Social Communication // Direct Is not Cruel</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+      <p class="breadcrumb">social_communication // bud 02 // difficulty 3.1</p>
+      <h1>Direct Is not Cruel</h1>
+
+      <section class="gate">
+        <h2>direct is not cruel</h2>
+        <p>The receiver finds a message with three possible meanings. The unsafe read performs around the ambiguity. The stable read chooses calm, specific language that reduces load.</p>
+        <pre class="code-block">LANGUAGE TRACE
+
+vague reassurance ..... pretty but unusable
+sharp accusation ...... heat without repair
+calm specific ask ..... usable signal
+next step named ....... ambiguity lowers</pre>
+      </section>
+
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the kind of language that lowers ambiguity.</p>
+        <form id="social-node-02-form">
+          <label for="social-node-02-answer">response</label><br>
+          <input id="social-node-02-answer" name="answer" type="text" autocomplete="off" spellcheck="false" class="answer-input" placeholder="principle">
+          <button class="audio-button" type="submit">submit</button>
+        </form>
+        <p id="social-node-02-status" class="audio-status" aria-live="polite"></p>
+      </section>
+
+      <ul class="nav-links"><li><a href="../../layer_03.html">return to Outer Bark</a></li><li><a href="../../hub.html">hub</a></li></ul>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.getElementById("social-node-02-form");
+      const input = document.getElementById("social-node-02-answer");
+      const status = document.getElementById("social-node-02-status");
+      function normalize(value) { return value.trim().toLowerCase(); }
+      function compact(value) { return normalize(value).replace(/[^a-z0-9]/g, ""); }
+      function includesAny(value, terms) { return terms.some(function (term) { return value.indexOf(term) !== -1; }); }
+      function accepts(value) {
+        const key = compact(value);
+        const rejected = new Set(["direct", "nice", "vague", "reassurance", "accuse", "accusation", "performance", "guess"]);
+        const exact = new Set(["calmspecificlanguage", "calmspecificcommunication", "directspecificcalm", "specificbeatsvague", "clarityreducesambiguity", "directisnotcruel", "clearandcalm", "calmclarity", "usenextsteps", "namednextstep"]);
+        if (!key || rejected.has(key)) return false;
+        if (exact.has(key)) return true;
+        if (includesAny(key, ["specific", "clear", "clarity", "direct", "calm"]) && includesAny(key, ["language", "communication", "ambiguity", "load", "nextstep", "usable"])) return true;
+        return includesAny(key, ["ask", "confirm"]) && includesAny(key, ["specific", "clear", "direct"]);
+      }
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!compact(input.value)) { status.textContent = "empty channel"; return; }
+        if (accepts(input.value)) { status.textContent = "language stabilized"; window.location.href = "node_02_reward.html"; }
+        else { status.textContent = "ambiguity unresolved"; window.location.href = "../../fail/puzzle_failed.html"; }
+      });
+    }());
+  </script>
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+</body>
+</html>

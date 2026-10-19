@@ -1,0 +1,68 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Shared Play // Pleasure Boundary</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+
+
+  <p class="breadcrumb">shared_play // bud 03 // difficulty 4.2</p>
+  <h1>Play Without Pressure</h1>
+
+  <section class="warning">
+    <h2>pleasure boundary</h2>
+    <p>The third room tests whether the receiver can stay safe around joy, play, beauty, pleasure, and invitation-coded signal without turning them into access claims.</p>
+  </section>
+
+  <section class="gate">
+    <h2>pleasure is not permission</h2>
+    <p>Playful moments work best when neither person feels pushed to perform or entertain.</p>
+
+    <pre class="code-block">performance ............ pressure
+play .................... shared choice
+pause ................... still welcome
+no ...................... accepted</pre> </section>
+
+
+  <p>Common failure: turning a shared moment into a test someone must pass.</p>
+
+  <section class="gate" aria-labelledby="answer-title">
+    <h2 id="answer-title">receiver input</h2>
+    <p>Enter the choice that leaves room for both people's interests.</p>
+
+    <form id="shared-play-node-03-form">
+      <label for="shared-play-node-03-answer">answer packet</label><br>
+      <input
+        id="shared-play-node-03-answer"
+        name="answer"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        class="answer-input"
+        placeholder="boundary..."
+      >
+      <button class="audio-button" type="submit">submit packet</button>
+    </form>
+
+    <p id="shared-play-node-03-status" class="audio-status" aria-live="polite"></p>
+  </section>
+
+  <ul class="nav-links"><li><a href="../../layer_04.html">return to Inner Bark</a></li><li><a href="../../hub.html">hub</a></li></ul>
+
+</article>
+
+
+  </main>
+
+  <script>(function(){const form=document.getElementById("shared-play-node-03-form"),input=document.getElementById("shared-play-node-03-answer"),status=document.getElementById("shared-play-node-03-status");const options=["shared choice","no pressure","play without pressure","change the subject","a pause is welcome"];form.addEventListener("submit",function(e){e.preventDefault();const answer=input.value.trim().toLowerCase();const good=options.some(x=>answer.includes(x));if(good){status.textContent="packet accepted";window.location.href="node_03_reward.html"}else{status.textContent="try a more playful, respectful answer";window.location.href="../../fail/puzzle_failed.html"}});}());</script>
+
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+
+</body>
+</html>

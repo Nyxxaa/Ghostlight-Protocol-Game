@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GHOSTLIGHT PROTOCOL // Relationships Attachment // Consistency Lowers uncertainty</title><link rel="stylesheet" href="../../../style.css"></head>
+<body><main class="ghost-page"><article class="ghost-card">
+  <p class="breadcrumb">relationships_attachment // bud 02 // difficulty 7.1</p><h1>Consistency Lowers uncertainty</h1>
+  <section class="gate"><h2>consistency lowers uncertainty</h2><p>The unsafe read treats availability signals as optional. The stable read knows consistency regulates attachment uncertainty.</p><pre class="code-block">clear timing ............... lowers uncertainty
+warning before absence ..... lowers uncertainty
+kept promise ............... lowers uncertainty
+repair after rupture ....... lowers uncertainty
+hot/cold pattern ........... raises uncertainty
+ambiguous silence .......... raises uncertainty
+delayed choice ............. raises uncertainty
+
+Consistency is not boring.
+It is dependable base.</pre></section>
+  <form class="gate" id="gate-form"><label for="answer">Enter what makes presence safe over time.</label><input class="code-block" id="answer" name="answer" autocomplete="off" required><button class="audio-button" type="submit">submit</button></form>
+</article></main><script>
+const form=document.getElementById("gate-form");const input=document.getElementById("answer");const norm=v=>v.toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+form.addEventListener("submit",event=>{event.preventDefault();const a=norm(input.value);const bad=["hot and cold","disappear","ambiguity","mystery","make them wait","delayed choice","inconsistency","silence","test them"].some(x=>a.includes(x));const good=(a.includes("consistency")&&(a.includes("uncertainty")||a.includes("safety")||a.includes("shelter")))||(a.includes("consistent presence"))||(a.includes("clear timing")&&a.includes("uncertainty"))||(a.includes("warning before absence"))||(a.includes("kept promise")&&a.includes("safety"))||(a.includes("repair after rupture"))||(a.includes("no hot cold"))||(a.includes("clear availability"));location.href=good?"node_02_reward.html":"../../fail/puzzle_failed.html";});
+</script><script src="../../../script.js?v=branch-inputs-3"></script></body></html>

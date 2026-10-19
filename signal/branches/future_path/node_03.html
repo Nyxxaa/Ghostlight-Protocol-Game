@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // Future Path // Desire Needs Structure</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+
+      <p class="breadcrumb">future_path // bud 03 // difficulty 5.2</p>
+      <h1>Ideas Need a Next Step</h1>
+
+      <section class="gate">
+        <h2>desire needs structure</h2>
+        <p>A wish becomes easier to discuss when it has a clear next step and a pace everyone chooses.</p>
+
+        <pre class="code-block">idea ..................... named
+next step ............... chosen together
+shared effort ........... visible
+change of plan .......... allowed</pre>
+      </section>
+
+      <p>Common failure: assuming what the other person wants without asking.</p>
+
+      <section class="gate" aria-labelledby="answer-title">
+        <h2 id="answer-title">receiver input</h2>
+        <p>Enter the rule that turns an idea into a shared path.</p>
+
+        <form id="future-path-node-03-form">
+          <label for="future-path-node-03-answer">answer packet</label><br>
+          <input
+            id="future-path-node-03-answer"
+            name="answer"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            class="answer-input"
+            placeholder="rule..."
+          >
+          <button class="audio-button" type="submit">submit packet</button>
+        </form>
+
+        <p id="future-path-node-03-status" class="audio-status" aria-live="polite"></p>
+      </section>
+
+      <ul class="nav-links"><li><a href="../../layer_05.html">return to Cambium</a></li><li><a href="../../hub.html">hub</a></li></ul>
+
+    </article>
+  </main>
+
+  <script>(function(){const form=document.getElementById("future-path-node-03-form"),input=document.getElementById("future-path-node-03-answer"),status=document.getElementById("future-path-node-03-status");const options=["clear next step","choose a next step","revise the path","idea becomes workable"];form.addEventListener("submit",function(e){e.preventDefault();const answer=input.value.trim().toLowerCase();const good=options.some(x=>answer.includes(x));if(good){status.textContent="packet accepted";window.location.href="node_03_reward.html"}else{status.textContent="try a more specific shared-plan answer";window.location.href="../../fail/care_gate_failed.html"}});}());</script>
+
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+</body>
+</html>

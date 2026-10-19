@@ -1,0 +1,63 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GHOSTLIGHT PROTOCOL // overall load // Load Is Cumulative</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+  <main class="ghost-page">
+    <article class="ghost-card">
+
+
+  <p class="breadcrumb">pacing // bud 02 // difficulty 5.1</p>
+  <h1>Commitments Can Overlap</h1>
+
+  <section class="gate">
+    <h2>load is cumulative</h2>
+    <p>Existing commitments matter. Check the shared schedule before adding one more request.</p>
+
+    <pre class="code-block">existing plan ........... still matters
+new request ............. adds commitment
+shared calendar ......... reduces confusion
+clear choice ............ preserves respect</pre> </section>
+
+
+  <p>Common failure: deciding what the other person means without asking.</p>
+
+  <section class="gate" aria-labelledby="answer-title">
+    <h2 id="answer-title">receiver input</h2>
+    <p>Enter the principle that explains why commitments can overlap.</p>
+
+    <form id="pacing-node-02-form">
+      <label for="pacing-node-02-answer">answer packet</label><br>
+      <input
+        id="pacing-node-02-answer"
+        name="answer"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        class="answer-input"
+        placeholder="principle..."
+      >
+      <button class="audio-button" type="submit">submit packet</button>
+    </form>
+
+    <p id="pacing-node-02-status" class="audio-status" aria-live="polite"></p>
+  </section>
+
+  <ul class="nav-links"><li><a href="../../layer_05.html">return to Cambium</a></li><li><a href="../../hub.html">hub</a></li></ul>
+
+</article>
+
+
+  </main>
+
+  <script>(function(){const form=document.getElementById("pacing-node-02-form"),input=document.getElementById("pacing-node-02-answer"),status=document.getElementById("pacing-node-02-status");const options=["overlapping commitments","check existing plans","shared schedule","one more commitment"];form.addEventListener("submit",function(e){e.preventDefault();const answer=input.value.trim().toLowerCase();const good=options.some(x=>answer.includes(x));if(good){status.textContent="packet accepted";window.location.href="node_02_reward.html"}else{status.textContent="try a clearer shared-plan answer";window.location.href="../../fail/puzzle_failed.html"}});}());</script>
+
+  <script src="../../../script.js?v=branch-inputs-3"></script>
+
+</body>
+</html>
